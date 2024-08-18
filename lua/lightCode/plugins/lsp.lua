@@ -26,9 +26,11 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
+                -- Link with additional servers
+                -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ast_grep
                 "lua_ls",
                 "bashls",
-                "ast_grep",
+                "clangd",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
